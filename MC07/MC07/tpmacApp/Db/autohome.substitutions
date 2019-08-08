@@ -1,0 +1,9 @@
+file "db/autohome.db"
+{
+pattern
+{SYS,            DEV,                      PLC,  PORT  }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}",    0,    P0    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}",    0,    P0    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}",    13,   P0    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}",    14,   P0    }
+}

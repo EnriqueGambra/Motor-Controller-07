@@ -1,0 +1,19 @@
+file "db/motorstatus.db"
+{
+pattern
+{SYS,            DEV,                      PORT,  AXIS }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}",    "P0",  1    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}",    "P0",  2    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}",    "P0",  3    }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}",    "P0",  4    }
+}
+
+file "db/pmacStatusAxis.db"
+{
+pattern
+{SYS,             DEV,            PORT,  AXIS }
+{"XF:07ID1-OP",   "{MC:07-Ax:1}", "P0",  1    }
+{"XF:07ID1-OP",   "{MC:07-Ax:2}", "P0",  2    }
+{"XF:07ID1-OP",   "{MC:07-Ax:3}", "P0",  3    }
+{"XF:07ID1-OP",   "{MC:07-Ax:4}", "P0",  4    }
+}

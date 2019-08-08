@@ -1,0 +1,4 @@
+NAME=MC07
+USER=softioc
+PORT=5007
+HOST=xf07id1-ioc1.cs.nsls2.local

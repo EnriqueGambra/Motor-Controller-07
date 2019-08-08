@@ -1,0 +1,15 @@
+file "db/motor.db"
+{
+pattern
+{P,              M,                        MOTOR,  PORT,  ADDR,  DESC,    DTYP,      MRES,          EGU,  PREC,  ALIAS             }
+}
+
+file "db/motor_in_cs.template"
+{
+pattern
+{P,              M,                        SPORT  }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}Mtr", "P0"   }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}Mtr", "P0"   }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}Mtr", "P0"   }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}Mtr", "P0"   }
+}

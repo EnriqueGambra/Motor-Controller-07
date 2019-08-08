@@ -1,0 +1,9 @@
+file "db/motor.db"
+{
+pattern
+{P,              M,                        MOTOR,  PORT,  ADDR,  DESC,    DTYP,      MRES,          EGU,  PREC,  ALIAS             }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}Mtr", "M0",   "P0",  1,     "MirP",  asynMotor, "1.5625e-06",  "mm", 6,     "pgm_mir_pitch"   }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}Mtr", "M0",   "P0",  2,     "GrtP",  asynMotor, "1.5625e-06",  "mm", 6,     "pgm_grt_pitch"   }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}Mtr", "M0",   "P0",  3,     "MirX",  asynMotor, "0.0001",      "mm", 4,     "pgm_mir_xtrans"  }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}Mtr", "M0",   "P0",  4,     "GrtX",  asynMotor, "0.0001",      "mm", 4,     "pgm_grt_xtrans"  }
+}

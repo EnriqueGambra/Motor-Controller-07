@@ -1,0 +1,9 @@
+file "${TOP}/db/pmacaux.db"
+{
+pattern
+{SYSP,           DEVP,                     SYSV,           DEVV,                     AXIS  }
+{"XF:07ID1-OP",   "{MC:07-Ax:1}", "XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}",    1    }
+{"XF:07ID1-OP",   "{MC:07-Ax:2}", "XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}",    2    }
+{"XF:07ID1-OP",   "{MC:07-Ax:3}", "XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}",    3    }
+{"XF:07ID1-OP",   "{MC:07-Ax:4}", "XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}",    4    }
+}

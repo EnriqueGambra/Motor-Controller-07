@@ -1,0 +1,9 @@
+file "db/pmac_asyn_motor.db"
+{
+pattern
+{SYS,            DEV,                      MOTOR,  SPORT,  ADDR,             DESC,    DTYP        PREC,  EGU}
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}",    "M0",   "P0",   1,                "MirP",  asynMotor,  6,     "mm"}
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}",    "M0",   "P0",   2,                "GrtP",  asynMotor,  6,     "mm"}
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}",    "M0",   "P0",   3,                "MirX",  asynMotor,  4,     "mm"}
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}",    "M0",   "P0",   4,                "GrtX",  asynMotor,  4,     "mm"}
+}

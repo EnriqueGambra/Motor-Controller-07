@@ -1,0 +1,9 @@
+file "${TOP}/db/pmac_physical_limit.db"
+{
+pattern
+{SYS,            DEV,                      }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirP}"     }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtP}"     }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:MirX}"     }
+{"XF:07ID1-OP",  "{Mono:PGM1-Ax:GrtX}"     }
+}

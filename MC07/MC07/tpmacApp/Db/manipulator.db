@@ -1,0 +1,83 @@
+
+#Record to get the current motor position
+record(calcout, "$(SYS){$(DEV)}MotorPositioning"{
+        field(DESC, "Calculates the current motor positioning in counts")
+        field(DTYP, "stream")
+        field(SCAN, ".1 second")
+	field(PHAS, "0")
+        field(INP, "$(P)$(M)motor.RMP")
+	field(FLNK, "$(SYS){$(DEV)MotorSafe))
+}
+
+#Record to input the valve position
+record(longin, "$(SYS){$(DEV)}ValvePosition"{
+        field(DESC, "Position of the gate valve in counts")
+        field(DTYP, "stream")
+        field(INP, "@pmac.proto getIntVar(M4950) $(PORT)")
+}
+
+#Record to input the valve offset
+record(longin, "$(SYS){$(DEV)}ValveOffset"{
+        field(DESC, "Valve offset width in counts")
+        field(DTYP, "stream")
+        field(INP, "@pmac.proto getIntVar(M4951) $(PORT)")
+}
+
+#Record that outputs whether the Motor is safe
+record(bi, "$(SYS){$(DEV)}MotorSafe"{
+        field(DESC, "1-Motor is safe 0-Motor isn't safe")
+        field(PINI, "YES")	
+        field(DTYP, "stream")
+        field(SCAN, ".1 second")
+	field(PHAS, "1")
+        field(INP, "@pmac.proto getIntVar(M4952) $(PORT)")
+	field(FLNK, "$(SYS){$(DEV)}ValveCanClose)
+}
+
+#Record that determines whether the valve can close 
+record(bi, "$(SYS){$(DEV)}ValveCanClose"{
+        field(DESC, "1-Valve can close 0-Valve can't close")
+        field(DTYP, "stream")
+        field(SCAN, ".1 second")
+	field(PHAS, "2")
+	field(PINI, "YES")
+        field(INP, "@pmac.proto getIntVar(M34) $(PORT)")
+}
+
+#Record that determines if the valve is open
+record(bi, "$(SYS){$(DEV)}ValveOpen"{
+        field(DESC, "1-Gate Valve Open 0-Gate Valve Not Closed")
+        field(DTYP, "stream")
+	field(ZNAM, "Valve Open")
+	field(ONAM, "Valve Closed")
+        field(SCAN, ".1 second")
+	field(PINI, "YES")
+        field(INP, "@pmac.proto getIntVar(M1) $(PORT)")
+}
+
+#Record that determines if the valve is closed
+record(bi, "$(SYS){$(DEV)}ValveClosed"{
+        field(DESC, "1-Gate Valve Closed 0-Gate Valve Open")
+        field(DTYP, "stream")
+	field(ZNAM, "Valve Closed")
+	field(ONAM, "Valve Open")
+        field(SCAN, ".1 second")
+	field(PINI, "YES")
+        field(INP, "@pmac.proto getIntVar(M3) $(PORT)")
+}
+
+record(calc, "$(SYS){$(DEV)}ValveHighRange"{
+	field(DESC, "Valve high range in which manipulator colliding with gate valve is possible")
+	field(INPA, "$(P)$(M)ValvePosition.VAL")
+	field(INPB, "$(P)$(M)ValveOffset.VAL")
+	field(CALC, A+B)
+}
+
+record(calc, "$(SYS){$(DEV)}ValveLowRange"{
+	field(DESC, "Valve low range in which manipulator colliding with the gate valve is possible")
+	field(INPA, "$(P)$(M)ValvePosition.VAL")
+	field(INPB, "$(P)$(M)ValveOffset.VAL")
+	field(CALC, A-B)
+}
+
+
